@@ -1,0 +1,9 @@
+# github:bruntonspall:home:etc/bash/host/GNM60091/android
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Set ec2 variables
+
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="/Users/mbs/Developer/Cellar/ec2-api-tools/1.3-57419/jars"
+export EC2_URL="https://ec2.eu-west-1.amazonaws.com"

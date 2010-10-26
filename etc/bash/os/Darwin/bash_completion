@@ -1,0 +1,8 @@
+# github:bruntonspall:home:etc/bash/os/Darwin/bash_completion_
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#		Setup bash completion under brew
+
+if [ "$USE_BASH_COMPLETION" = 'yes' ]; then
+    export BASH_COMPLETION=~/Developer/etc/bash_completion
+fi

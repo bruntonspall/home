@@ -1,0 +1,6 @@
+# github:bruntonspall:home:etc/bash/host/GNM60091/gitx
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Setup gitx
+
+alias gitx='open -a /Applications/GitX.app .'

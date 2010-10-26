@@ -1,0 +1,4 @@
+export rvm_path=/Users/mbs/Developer/.rvm
+if [[ -s /Users/mbs/Developer/.rvm/scripts/rvm ]] ; then
+  source /Users/mbs/Developer/.rvm/scripts/rvm
+fi

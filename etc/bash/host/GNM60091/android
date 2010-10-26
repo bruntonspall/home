@@ -1,0 +1,7 @@
+# github:bruntonspall:home:etc/bash/host/GNM60091/android
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Set android home (Need a better way of locating current android-sdk)
+
+export ANDROID_SDK_HOME="${HOME}/Developer/Cellar/android-sdk/r6"
+export ANDROID_SDK_ROOT="${HOME}/Developer/Cellar/android-sdk/r6"

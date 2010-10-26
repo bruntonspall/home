@@ -21,10 +21,10 @@ for rc_file in $( echo ${BASH_BASE}/function/* ); do
 done
 
 # Setup anything that is specific to the current location/hardware.
-source_if_exists ${BASH_BASE}/os/${HOSTOS}/*
-source_if_exists ${BASH_BASE}/arch/${HOSTTYPE}/*
-source_if_exists ${BASH_BASE}/domain/${DOMAIN}/*
-source_if_exists ${BASH_BASE}/host/${HOST}/*
+source_or_warn ${BASH_BASE}/os/${HOSTOS}/*
+source_or_warn ${BASH_BASE}/arch/${HOSTTYPE}/*
+source_or_warn ${BASH_BASE}/domain/${DOMAIN}/*
+source_or_warn ${BASH_BASE}/host/${HOST}/*
 
 # Setup bash completion.
 if [ "$USE_BASH_COMPLETION" = 'yes' ]; then

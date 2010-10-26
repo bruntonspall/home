@@ -4,10 +4,10 @@
 #       Setup the default locations of packaging system files.
 
     MK_CONF='/etc/mk.conf'
-PKGSRC_BASE='/usr/pkg'
+PKGSRC_BASE='~/Developer'
 PKGCHK_CONF='/etc/pkg_chk.conf'
 
-MACPORTS_BASE='/opt/local'
+#MACPORTS_BASE='/opt/local'
 
 # TODO
 #   *   homebrew

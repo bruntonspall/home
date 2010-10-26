@@ -3,5 +3,5 @@
 #
 #       See ~/share/home/setup.markdown for more information.
 
-export FIX_HOSTNAME_ON_OSX='yes'
+export FIX_HOSTNAME_ON_OSX='no'
 export USE_BASH_COMPLETION='yes'

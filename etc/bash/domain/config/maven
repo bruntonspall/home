@@ -1,0 +1,6 @@
+# github:bruntonspall:home:etc/bash/domain/config/maven
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Set maven settings
+
+alias mvn='mvn -s ~/etc/maven/home-settings.xml'

@@ -1,0 +1,7 @@
+# github:bruntonspall:home:etc/bash/os/Darwin/macvim
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#		Use MacVim
+alias vi=mvim
+alias vim=mvim
+alias gvim=mvim

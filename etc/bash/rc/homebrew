@@ -1,0 +1,3 @@
+path_prepend "${HOME}/Developer/bin"
+path_prepend "${HOME}/Developer/sbin"
+manpath_append "${HOME}/Developer/share/man"
