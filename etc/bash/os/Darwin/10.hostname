@@ -10,4 +10,9 @@ if [ "$FIX_HOSTNAME_ON_OSX" = 'yes' ]; then
     export DOMAIN=$(
         ipconfig getpacket en0 | grep "domain_name " | awk '{ print $3 }'
     )
+	if [ "$DOMAIN" = "" ]; then
+	    export DOMAIN=$(
+	        ipconfig getpacket en1 | grep "domain_name " | awk '{ print $3 }'
+	    )	
+	fi
 fi
