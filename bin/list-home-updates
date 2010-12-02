@@ -88,7 +88,7 @@ sub get_github_url {
     my $branch  = $details{'branch'} // 'master';
     my $path    = $details{'path'};
     
-    return "http://github.com/${user}/${repo}/raw/${branch}/${path}";
+    return "https://github.com/${user}/${repo}/raw/${branch}/${path}";
 }
 sub file_has_newer_version {
     my $file = shift;
