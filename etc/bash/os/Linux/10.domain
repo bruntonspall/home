@@ -1,0 +1,3 @@
+if [ "$DOMAIN" == "$HOST" ]; then
+  export DOMAIN=$(grep "domain" /etc/resolv.conf | awk '{ print $2 }')
+fi;
