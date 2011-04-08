@@ -3,4 +3,4 @@
 #
 #       Set maven settings
 
-alias mvn='mvn -s ~/etc/maven/home-settings.xml'
+ln -s ~/etc/maven/gu-settings.xml ~/.m2/settings.xml
