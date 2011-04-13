@@ -1,67 +1,80 @@
-<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	<mirrors>
-	    <mirror>
-	      <id>guardian central</id>
-	      <name>guardian Mirror of http://repo1.maven.org/maven2/</name>
-	      <url>http://nexus.gudev.gnl:8081/nexus/content/repositories/central/</url>
-	      <mirrorOf>central</mirrorOf>
-	    </mirror>
-	</mirrors>			
-	<profiles>
-		<profile>
-			<id>guardian</id>
-			<repositories> 
-				<repository>
-					<id>guardian-releases</id> 
-					<name>Guardian Releases</name>
-					<snapshots>
-					<enabled>false</enabled>
-					</snapshots>
-					<url>http://nexus.gudev.gnl:8081/nexus/content/repositories/releases/</url> 
-					<layout>default</layout>
-				</repository> 
-				<repository>
-					<id>guardian-snapshots</id> 
-					<name>Guardian Snapshots</name>
-					<releases>
-					<enabled>false</enabled>
-					</releases>
-					<url>http://nexus.gudev.gnl:8081/nexus/content/repositories/snapshots/</url> 
-					<layout>default</layout>
-				</repository> 
-				<repository>
-					<id>guardian-external</id> 
-					<name>Guardian External Mirror</name>
-					<snapshots>
-					<enabled>false</enabled>
-					</snapshots>
-					<url>http://nexus.gudev.gnl:8081/nexus/content/repositories/thirdparty/</url> 
-					<layout>default</layout>
-				</repository> 
-				<repository>
-					<id>guardian-public</id> 
-					<name>Guardian Public Mirror</name>
-					<snapshots>
-					<enabled>false</enabled>
-					</snapshots>
-					<url>http://nexus.gudev.gnl:8081/nexus/content/groups/public/</url> 
-					<layout>default</layout>
-				</repository> 
-			</repositories> 
-			<pluginRepositories>
-				<pluginRepository>
-					<id>guardian-releases</id> 
-					<url>http://nexus.gudev.gnl:8081/nexus/content/repositories/releases/</url> 
-					<name>Guardian Releases</name>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</pluginRepository> 
-			 </pluginRepositories> 
-		</profile> 
-	</profiles> 
-	<activeProfiles>
-		<activeProfile>guardian</activeProfile>
-	</activeProfiles>
+<settings>
+	<proxies>
+		<proxy>
+			<active>true</active>
+			<protocol>http</protocol>
+			<host>devscreen.gudev.gnl</host>
+			<port>3128</port>
+			<nonProxyHosts>*.gudev.gnl</nonProxyHosts>
+		</proxy>
+	</proxies>
+    <mirrors>
+        <mirror>
+            <id>guardian_nexus_central_mirror</id>
+            <mirrorOf>central</mirrorOf>
+            <url>http://nexus.gudev.gnl:8081/nexus/content/repositories/central</url>
+        </mirror>
+    </mirrors>
+	<servers>
+		<server>
+			<id>guardian-releases</id>
+			<username>deployment</username>
+			<password>d3pl0y</password>
+		</server>
+	</servers>
+
+    <profiles>
+        <profile>
+            <id>development</id>
+            <repositories>
+                <repository>
+                    <id>guardian-releases</id>
+                    <url>
+                        http://nexus.gudev.gnl:8081/nexus/content/repositories/releases/
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+
+                <repository>
+                    <id>guardian-snapshots</id>
+                    <url>
+                        http://nexus.gudev.gnl:8081/nexus/content/repositories/snapshots/
+                    </url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>guardian-releases</id>
+                    <url>
+                        http://nexus.gudev.gnl:8081/nexus/content/repositories/releases/
+                    </url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+            </pluginRepositories>
+
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>development</activeProfile>
+    </activeProfiles>
 </settings>
+
