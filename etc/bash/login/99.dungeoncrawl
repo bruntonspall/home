@@ -1,0 +1,1 @@
+alias dungeoncrawl='ssh -i ~/var/cao_key.txt joshua@crawl.akrasiac.org'
