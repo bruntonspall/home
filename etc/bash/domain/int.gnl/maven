@@ -3,4 +3,4 @@
 #
 #       Set maven settings
 
-ln -s ~/etc/maven/gu-settings.xml ~/.m2/settings.xml
+ln -fs ~/etc/maven/gu-settings.xml ~/.m2/settings.xml
