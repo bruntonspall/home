@@ -1,2 +1,2 @@
-SBT_OPTS="${SBT_OPTS} -Dproxy.host=proxy.gudev.gnl -Dproxy.port=3128"
+SBT_OPTS="${SBT_OPTS} -Dproxy.host=devscreen.gudev.gnl -Dproxy.port=3128"
 
