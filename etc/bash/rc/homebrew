@@ -1,3 +1,4 @@
 path_prepend "${HOME}/Developer/bin"
 path_prepend "${HOME}/Developer/sbin"
 manpath_append "${HOME}/Developer/share/man"
+export PYTHONPATH="/Users/mbrunton-spall/Developer/lib/python2.6/site-packages/:$PYTHONPATH"
