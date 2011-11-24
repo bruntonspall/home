@@ -3,7 +3,7 @@
 #
 #       This is the master initialisation (rc) file for bash. Anything in this
 #       file gets applied to every bash shell, "login" or otherwise.
-#       
+#
 #       Read ~/share/home/customising.markdown before making any changes.
 
 # Allow overriding of the default location of bash setup.
@@ -21,10 +21,10 @@ for rc_file in $( echo ${BASH_BASE}/function/* ); do
 done
 
 # Setup anything that is specific to the current location/hardware.
-source_or_warn ${BASH_BASE}/os/${HOSTOS}/*
-source_or_warn ${BASH_BASE}/arch/${HOSTTYPE}/*
-source_or_warn ${BASH_BASE}/domain/${DOMAIN}/*
-source_or_warn ${BASH_BASE}/host/${HOST}/*
+if [ -n "${HOSTOS}" ]; then source_or_warn ${BASH_BASE}/os/${HOSTOS}/*; fi
+if [ -n "${HOSTTYPE}" ]; then source_or_warn ${BASH_BASE}/arch/${HOSTTYPE}/*; fi
+if [ -n "${DOMAIN}" ]; then source_or_warn ${BASH_BASE}/domain/${DOMAIN}/*; fi
+if [ -n "${HOST}" ]; then source_or_warn ${BASH_BASE}/host/${HOST}/*; fi
 
 # Setup bash completion.
 if [ "$USE_BASH_COMPLETION" = 'yes' ]; then
