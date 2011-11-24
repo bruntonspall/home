@@ -15,4 +15,5 @@ need mate && {
     function sd {
         svn diff "$@" | tm
     }
+    export TM_GIT='~/Developer/bin/git';
 }
