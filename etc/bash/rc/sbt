@@ -1,1 +1,1 @@
-SBT_OPTS="${SBT_OPTS}  -Dsbt.boot.directory=$HOME/.sbt/boot/ -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
+export SBT_OPTS="${SBT_OPTS}  -Dsbt.boot.directory=$HOME/.sbt/boot/ -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
