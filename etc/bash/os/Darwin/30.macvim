@@ -1,0 +1,19 @@
+# github:bruntonspall:home:etc/bash/host/GNM60091/textmate
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Working with TextMate.
+
+need vim && {
+    export VISUAL='vim'
+    export EDITOR='vim'
+
+    function pdtm {
+        perldoc -t $1 | vim -R -
+    }
+    function gd {
+        git diff "$@" | vim -R -
+    }
+    function sd {
+        svn diff "$@" | vim -R -
+    }
+}

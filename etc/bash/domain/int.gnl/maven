@@ -4,3 +4,4 @@
 #       Set maven settings
 
 ln -fs ~/etc/maven/gu-settings.xml ~/.m2/settings.xml
+export MAVEN_HOME=/usr/share/maven

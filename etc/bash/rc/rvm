@@ -1,4 +1,4 @@
-export rvm_path=/Users/mbs/Developer/.rvm
-if [[ -s /Users/mbs/Developer/.rvm/scripts/rvm ]] ; then
-  source /Users/mbs/Developer/.rvm/scripts/rvm
+export rvm_path=/Users/mbrunton-spall/Developer/.rvm
+if [[ -s /Users/mbrunton-spall/Developer/.rvm/scripts/rvm ]] ; then
+  source /Users/mbrunton-spall/Developer/.rvm/scripts/rvm
 fi

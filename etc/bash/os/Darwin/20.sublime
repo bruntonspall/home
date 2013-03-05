@@ -1,0 +1,22 @@
+# github:bruntonspall:home:etc/bash/os/Darwin/sublime
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Working with Sublime Text 2.
+
+export SUBLIME_HOME=${HOME}/Applications/Sublime\ Text\ 2.app
+path_append  "${SUBLIME_HOME}/Contents/SharedSupport/bin"
+
+need subl && {
+    export VISUAL='subl -w'
+    export EDITOR='subl -w'
+
+    function pdtm {
+        perldoc -t $1 | subl
+    }
+    function gd {
+        git diff "$@" | subl
+    }
+    function sd {
+        svn diff "$@" | subl
+    }
+}
