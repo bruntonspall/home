@@ -2,10 +2,13 @@
 # -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
 #
 #       Working with Sublime Text 2.
-
+if [ -d "${HOME}/Applications/Sublime Text 2.app" ]; then
 export SUBLIME_HOME=${HOME}/Applications/Sublime\ Text\ 2.app
-path_append  "${SUBLIME_HOME}/Contents/SharedSupport/bin"
+elif [ -d "/Applications/Sublime Text 2.app" ]; then
+export SUBLIME_HOME=/Applications/Sublime\ Text\ 2.app
+fi
 
+path_append  "${SUBLIME_HOME}/Contents/SharedSupport/bin"
 need subl && {
     export VISUAL='subl -w'
     export EDITOR='subl -w'
