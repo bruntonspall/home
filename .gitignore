@@ -1,1 +1,3 @@
 etc/bash/domain/int.gnl/r2dev
+etc/offlineimap/*.pass
+etc/mutt/*.auth

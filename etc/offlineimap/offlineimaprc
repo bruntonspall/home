@@ -36,7 +36,7 @@ maxage = 30
 
 [mbnames]
 enabled = yes
-filename = ~/.mutt/muttrc.mailboxes
+filename = ~/home/etc/mutt/muttrc.mailboxes
 header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
