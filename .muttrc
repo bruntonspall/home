@@ -1,0 +1,94 @@
+set my_account_root     = "~/.mail"
+set my_account_one   = "GovUk"
+set my_account_two   = "BruntonSpall"
+
+macro index,pager g1 "<change-folder>$my_account_root/$my_account_one/INBOX<enter>"   "go to account one"
+macro index,pager g2 "<change-folder>$my_account_root/$my_account_two/INBOX<enter>"   "go to account two"
+
+folder-hook $my_account_root/$my_account_one   source ~/home/etc/mutt/$my_account_one.muttrc
+folder-hook $my_account_root/$my_account_two   source ~/home/etc/mutt/$my_account_two.muttrc
+
+# Default to Personal Mail
+source ~/home/etc/mutt/BruntonSpall.muttrc
+
+set spoolfile = "=INBOX"
+set mbox = "=[Google Mail]/All Mail"
+set postponed = "=[Google Mail]/Drafts"
+
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gI "<change-folder>=[Google Mail]/Important<enter>" "Go to inbox"
+macro index gA "<change-folder>=[Google Mail]/All Mail<enter>" "Go to all mail"
+macro index gS "<change-folder>=[Google Mail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gD "<change-folder>=[Google Mail]/Drafts<enter>" "Go to drafts"
+macro index gw "<change-folder>=Waiting<enter>" "Go to Waiting"
+macro index ,w "<save-message>=Waiting<enter>" "Save to @Waiting"
+macro index gt "<change-folder>=ToRead<enter>" "Go to ToRead"
+macro index ,t "<save-message>=ToRead<enter>" "Save to @ToRead"
+macro index gn "<change-folder>=NextActions<enter>" "Go to NextActions"
+macro index ,n "<save-message>=NextActions<enter>" "Save to @NextActions"
+macro index S "<save-message>" "Save" 
+
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+set reverse_name
+
+# Status Bar -----------------------------------------
+set status_chars  = " *%A"
+set status_format = "[$my_account]───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─(boxes: %b)-%?p?( %p postponed )?───"
+
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/enriched text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index R        group-reply
+bind index P recall-message
+
+# For better looks
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+
+bind pager R  group-reply
+
+# View attachments properly.
+set mailcap_path     = ~/home/etc/mutt/mailcap       # entries for filetypes 
+bind attach <return> view-mailcap
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+
+macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>"           "run offlineimap to sync all mail"
+source ~/home/etc/mutt/gpg.rc
+
+# Handle Contacts from Google
+set query_command = "~/home/etc/mutt/gcontacts.py -m short -r -s name %s"
+
+auto_view text/html
