@@ -1,2 +1,0 @@
-SBT_OPTS="${SBT_OPTS} -Dproxy.host=devscreen.gudev.gnl -Dproxy.port=3128"
-

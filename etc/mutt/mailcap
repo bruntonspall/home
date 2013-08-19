@@ -1,0 +1,21 @@
+# MS Word documents
+application/msword; ~/home/etc/mutt/view_attachment.sh %s "-" '/Applications/TextEdit.app'
+
+# Images
+image/jpg; ~/home/etc/mutt/view_attachment.sh %s jpg
+image/jpeg; ~/home/etc/mutt/view_attachment.sh %s jpg
+image/pjpeg; ~/home/etc/mutt/view_attachment.sh %s jpg
+image/png; ~/home/etc/mutt/view_attachment.sh %s png
+image/gif; ~/home/etc/mutt/view_attachment.sh %s gif
+
+# PDFs
+application/pdf; ~/home/etc/mutt/view_attachment.sh %s pdf
+
+text/html;                      links %s; nametemplate=%s.html
+text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
+
+# HTML
+# text/html; ~/home/etc/mutt/view_attachment.sh %s html
+
+# Unidentified files
+application/octet-stream; ~/home/etc/mutt/view_attachment.sh %s "-"

@@ -1,2 +1,0 @@
-# Use mongo from homebrew
-alias mongod='mongod --config ~/Developer/Cellar/mongodb/2.0.0-x86_64/mongod.conf'

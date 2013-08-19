@@ -1,7 +1,0 @@
-# github:bruntonspall:home:etc/bash/domain/int.gnl/maven
-# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
-#
-#       Set maven settings
-
-ln -fs ~/etc/maven/gu-settings.xml ~/.m2/settings.xml
-export MAVEN_HOME=/usr/share/maven

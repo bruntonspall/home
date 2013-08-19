@@ -1,0 +1,86 @@
+# Offlineimap sample configuration file
+
+# This file documents *all* possible options and can be quite scary.
+# Looking for a quick start?  Take a look at offlineimap.conf.minimal.
+# More details can be found in the included user documention, which is
+# also available at: http://docs.offlineimap.org/en/latest/
+
+# NOTE: Settings generally support python interpolation. This means
+# values can contain python format strings which refer to other values
+# in the same section, or values in a special DEFAULT section. This
+# allows you for example to use common settings for multiple accounts:
+#
+# [Repository Gmail1]
+# trashfolder: %(gmailtrashfolder)s
+#
+# [Repository Gmail2]
+# trashfolder: %(gmailtrashfolder)s
+#
+# [DEFAULT]
+# gmailtrashfolder = [Google Mail]/Papierkorb
+#
+# would set the trashfolder setting for your German gmail accounts.
+
+# NOTE2: This implies that any '%' needs to be encoded as '%%'
+
+##################################################
+# General definitions
+##################################################
+
+[general]
+accounts = GovUk,BruntonSpall
+ui = ttyui
+fsync = false
+maxsyncaccounts = 3
+maxage = 30
+
+[mbnames]
+enabled = yes
+filename = ~/home/etc/mutt/muttrc.mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+
+[Account GovUk]
+localrepository = LocalGovUk
+remoterepository = RemoteGovUk
+status_backend = sqlite
+
+[Repository LocalGovUk]
+type = Maildir
+localfolders = ~/.mail/GovUk
+sep = /
+
+[Repository RemoteGovUk]
+type = Gmail
+ssl = yes
+cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+remoteuser = michael.bruntonspall@digital.cabinet-office.gov.uk
+remotepass = ~/home/etc/offlineimap/govuk.pass
+#maxconnections = 2
+trashfolder = [Google Mail]/Trash
+spamfolder = [Google Mail]/Spam
+folderfilter = lambda foldername: foldername not in ['Trash', '[Google Mail]/Bin', '[Google Mail]/All Mail', '[Google Mail]/Spam']
+
+[Account BruntonSpall]
+localrepository = LocalBruntonSpall
+remoterepository = RemoteBruntonSpall
+status_backend = sqlite
+
+[Repository LocalBruntonSpall]
+type = Maildir
+localfolders = ~/.mail/BruntonSpall
+sep = /
+
+[Repository RemoteBruntonSpall]
+type = Gmail
+ssl = yes
+cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+remoteuser = michael@brunton-spall.co.uk
+remotepass = ~/home/etc/offlineimap/bruntonspall.pass
+#maxconnections = 2
+trashfolder = [Google Mail]/Trash
+spamfolder = [Google Mail]/Spam
+folderfilter = lambda foldername: foldername not in ['Trash', '[Google Mail]/Bin', '[Google Mail]/All Mail', '[Google Mail]/Spam']

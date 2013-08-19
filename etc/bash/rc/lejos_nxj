@@ -1,3 +1,0 @@
-export NXJ_HOME=${HOME}/Downloads/lejos_nxj
-export DYLD_LIBRARY_PATH=$NXJ_HOME/bin
-path_prepend "${NXJ_HOME}/bin"
