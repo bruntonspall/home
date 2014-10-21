@@ -1,6 +1,6 @@
 # MS Word documents
 application/msword; ~/home/etc/mutt/view_attachment.sh %s "-" '/Applications/TextEdit.app'
-
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/home/etc/mutt/view_attachment.sh %s "-" '/Applications/LibreOffice.app'
 # Images
 image/jpg; ~/home/etc/mutt/view_attachment.sh %s jpg
 image/jpeg; ~/home/etc/mutt/view_attachment.sh %s jpg
