@@ -28,11 +28,12 @@
 ##################################################
 
 [general]
-accounts = GovUk,BruntonSpall
+accounts = GovUk,BruntonSpall,ScaleSummit
 ui = ttyui
 fsync = false
 maxsyncaccounts = 3
 maxage = 30
+
 
 [mbnames]
 enabled = yes
@@ -56,7 +57,7 @@ sep = /
 [Repository RemoteGovUk]
 type = Gmail
 ssl = yes
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+sslcacertfile = ~/home/etc/offlineimap/ca-bundle.cer
 remoteuser = michael.bruntonspall@digital.cabinet-office.gov.uk
 remotepassfile = ~/home/etc/offlineimap/govuk.pass
 #maxconnections = 2
@@ -77,9 +78,30 @@ sep = /
 [Repository RemoteBruntonSpall]
 type = Gmail
 ssl = yes
-cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
+sslcacertfile = ~/home/etc/offlineimap/ca-bundle.cer
 remoteuser = michael@brunton-spall.co.uk
 remotepassfile = ~/home/etc/offlineimap/bruntonspall.pass
+#maxconnections = 2
+trashfolder = [Google Mail]/Trash
+spamfolder = [Google Mail]/Spam
+folderfilter = lambda foldername: foldername not in ['Trash', '[Google Mail]/Bin', '[Google Mail]/All Mail', '[Google Mail]/Spam']
+
+[Account ScaleSummit]
+localrepository = LocalScaleSummit
+remoterepository = RemoteScaleSummit
+status_backend = sqlite
+
+[Repository LocalScaleSummit]
+type = Maildir
+localfolders = ~/.mail/ScaleSummit
+sep = /
+
+[Repository RemoteScaleSummit]
+type = Gmail
+ssl = yes
+sslcacertfile = ~/home/etc/offlineimap/ca-bundle.cer
+remoteuser = michael@scalesummit.org
+remotepassfile = ~/home/etc/offlineimap/ScaleSummit.pass
 #maxconnections = 2
 trashfolder = [Google Mail]/Trash
 spamfolder = [Google Mail]/Spam
