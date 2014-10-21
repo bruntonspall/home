@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -rf /tmp/tml && mkdir /tmp/tml
+/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --incognito --proxy-server=bruntonspall.local:8123 --user-data-dir=/tmp/tml --no-first-run http://check.torproject.org/
