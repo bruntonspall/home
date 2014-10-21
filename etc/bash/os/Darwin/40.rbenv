@@ -1,0 +1,7 @@
+# github:bruntonspall:home:etc/bash/os/Darwin/40.rbenv
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Use rbenv
+
+export RBENV_ROOT=/Users/michaelbruntonspall/Developer/var/rbenv
+eval "$(rbenv init -)"

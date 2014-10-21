@@ -4,3 +4,4 @@
 #       See ~/share/home/setup.markdown for more information.
 
 export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad

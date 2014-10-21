@@ -1,0 +1,2 @@
+export PIP_DOWNLOAD_CACHE=~/.cache/pip
+export WORKON_HOME=~/.cache/venv

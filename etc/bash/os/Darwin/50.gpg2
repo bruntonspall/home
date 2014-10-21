@@ -1,0 +1,6 @@
+# github:bruntonspall:home:etc/bash/os/Darwin/40.rbenv
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; -*-
+#
+#       Use gpg-agent
+
+eval $(gpg-agent --daemon)
