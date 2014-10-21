@@ -1,0 +1,10 @@
+source ~/home/etc/mutt/ScaleSummit.auth
+
+set from = "michael@scalesummit.org"
+set realname = "Michael Brunton-Spall"
+set folder = "~/.mail/ScaleSummit"
+set my_account = "ScaleSummit"
+set status_format = "[$my_account]───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set smtp_url     = "smtp://michael@scalesummit.org@smtp.gmail.com:587/"
+set postponed = "=[Google Mail]/Drafts"
+mailboxes =INBOX =Waiting =ToRead =NextActions

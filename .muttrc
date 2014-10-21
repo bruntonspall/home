@@ -1,12 +1,15 @@
 set my_account_root     = "~/.mail"
 set my_account_one   = "GovUk"
 set my_account_two   = "BruntonSpall"
+set my_account_three   = "ScaleSummit"
 
 macro index,pager g1 "<change-folder>$my_account_root/$my_account_one/INBOX<enter>"   "go to account one"
 macro index,pager g2 "<change-folder>$my_account_root/$my_account_two/INBOX<enter>"   "go to account two"
+macro index,pager g3 "<change-folder>$my_account_root/$my_account_three/INBOX<enter>"   "go to account three"
 
 folder-hook $my_account_root/$my_account_one   source ~/home/etc/mutt/$my_account_one.muttrc
 folder-hook $my_account_root/$my_account_two   source ~/home/etc/mutt/$my_account_two.muttrc
+folder-hook $my_account_root/$my_account_three   source ~/home/etc/mutt/$my_account_three.muttrc
 
 # Default to Personal Mail
 source ~/home/etc/mutt/BruntonSpall.muttrc
@@ -89,6 +92,10 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>"           "run offlin
 source ~/home/etc/mutt/gpg.rc
 
 # Handle Contacts from Google
-set query_command = "~/home/etc/mutt/gcontacts.py -m short -r -s name %s"
+set query_command = "~/home/etc/mutt/gmail2mutt.py %s"
 
 auto_view text/html
+
+source ~/home/etc/mutt/kill
+set score_threshold_read=0
+folder-hook . "push \"l ~n 1\n\""
