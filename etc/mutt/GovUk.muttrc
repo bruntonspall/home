@@ -7,5 +7,5 @@ set folder = "~/.mail/GovUk"
 set my_account = "GovUk"
 set status_format = "[$my_account]───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 set smtp_url     = "smtp://michael.bruntonspall@digital.cabinet-office.gov.uk@smtp.gmail.com:587/"
-set postponed = "=[Google Mail]/Drafts"
+set postponed = "=[Gmail]/Drafts"
 mailboxes =INBOX =Waiting =ToRead =NextActions
