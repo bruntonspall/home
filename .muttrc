@@ -99,3 +99,7 @@ auto_view text/html
 source ~/home/etc/mutt/kill
 set score_threshold_read=0
 folder-hook . "push \"l ~n 1\n\""
+set certificate_file=~/home/etc/offlineimaprc/ca-bundle.cer
+set ssl_use_sslv3=no
+set ssl_use_sslv2=no
+set ssl_starttls=yes
