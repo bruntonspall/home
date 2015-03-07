@@ -61,9 +61,9 @@ sslcacertfile = ~/home/etc/offlineimap/ca-bundle.cer
 remoteuser = michael.bruntonspall@digital.cabinet-office.gov.uk
 remotepassfile = ~/home/etc/offlineimap/govuk.pass
 #maxconnections = 2
-trashfolder = [Google Mail]/Trash
+trashfolder = [Google Mail]/Bin
 spamfolder = [Google Mail]/Spam
-folderfilter = lambda foldername: foldername not in ['Trash', '[Google Mail]/Bin', '[Google Mail]/All Mail', '[Google Mail]/Spam']
+folderfilter = lambda foldername: foldername not in ['Trash', '[Google Mail]/Bin', 'Bin', 'Spam', 'All Mail', '[Google Mail]/All Mail', '[Google Mail]/Spam']
 
 [Account BruntonSpall]
 localrepository = LocalBruntonSpall
