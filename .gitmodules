@@ -1,6 +1,3 @@
-[submodule "etc/dotvim"]
-	path = etc/dotvim
-	url = git@github.com:bruntonspall/dotvim.git
 [submodule "etc/sbt"]
 	path = etc/sbt
 	url = git@github.com:bruntonspall/my-sbt-plugins.git
