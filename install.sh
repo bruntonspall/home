@@ -5,3 +5,6 @@ for f in .bashrc .bash_profile .bash_logout bin share etc var .muttrc
 do
     ln -s $dir/$f $HOME/
 done
+cd $dir
+git submodule update --init
+etc/dotvim/install.sh
