@@ -7,4 +7,5 @@ do
 done
 cd $dir
 git submodule update --init
+ln -s etc/dotvim ~/.vim
 etc/dotvim/install.sh
